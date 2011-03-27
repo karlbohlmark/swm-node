@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Inconsolata">
+    <script src="xui.js"></script>
+    <script src="app.js"></script>
+      <script>
+        var getId = document.getElementById.bind(document);
+
+        document.addEventListener('DOMContentLoaded', function(){
+            x$('a').click(function(e){
+
+                getId('container').style['-webkit-transform'] = 'translate(-320px, 0)';
+            })
+
+        })
+    </script>
+  </head>
+  <body>
+
+  <div id="container" >
+      <div id="page1" class="black middle-content" data-role="page">
+          <header>
+            <img src="images/logo.png" alt="node.js">
+          </header>
+          <p>- Evented I/O for <span>V8 JavaScript</span></p>
+      </div>
+
+      <div id="page3" data-role="page" >
+               <embed style="margin-top:100px;" src="http://blip.tv/play/hq0KgbKUTgI" type="application/x-shockwave-flash" width="480" height="300" allowscriptaccess="always" allowfullscreen="true"></embed>
+      </div>
+
+      <div id="page4" data-role="page" >
+        <h1 class="wrong">Sync blocking IO</h1>
+        <code style="display:block;text-align:left;padding-left:27px;padding-top:20px;line-height:35px;">
+            records = db.query("Select * from person")<br>
+            //use database records<br>
+            <br>
+            page = WebRequest("http://google.se")<br>
+            //use html<br>
+            <br>
+            logs = File.ReadAllText("logs.txt")<br>
+            //use iogs<br>
+        </code>
+      </div>
+
+      <div id="page5" data-role="page" >
+        <h1>Non-blocking IO</h1>
+        <pre style="display:block;text-align:left;padding-left:27px;padding-top:20px;line-height:35px;">
+db.query("Select * from person", (records)=> {
+    //use database records
+});
+
+page = WebRequest("http://google.se", (page)=>{
+    //use html
+});
+
+logs = File.ReadAllText("logs.txt", (logs)=>{
+    //use logs
+});
+
+        </pre>
+      </div>
+
+      <div data-role="page">
+          <iframe src="http://blog.webfaction.com/a-little-holiday-present"></iframe>
+      </div>
+
+      <div id="page2" data-role="page">
+          <header>
+            <iframe src="http://shootout.alioth.debian.org/u32/which-programming-languages-are-fastest.php"></iframe>
+          </header>
+      </div>
+
+      <div data-role="page">
+        <pre>
+
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(8124, "127.0.0.1");
+
+        </pre>
+      </div>
+
+
+
+
+  </div>
+  </body>
+</html>
